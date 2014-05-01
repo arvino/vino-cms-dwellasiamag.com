@@ -2,8 +2,14 @@
 
 RewriteEngine On
 
+<<<<<<< HEAD
 RewriteBase /klien/mpg/dwellasiamag.com/
 
+=======
+# RewriteBase /direktori_lokalserver/dwellasiamag.com/
+
+RewriteBase /
+>>>>>>> aa3fe0b8ee60c0b109036bdf66b75a19274a74ff
 
 RewriteRule ^homepage\.dwellasia.magz$ index.php
 
@@ -202,4 +208,8 @@ RewriteRule ^in-digital\.dwellasia.magz$ page_getmagz_indigital.php
 
 
 # Web developer by Arvino Zulka Harahap , at November 2011  #
+<<<<<<< HEAD
 </IfModule>
+=======
+</IfModule>
+>>>>>>> aa3fe0b8ee60c0b109036bdf66b75a19274a74ff
