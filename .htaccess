@@ -2,7 +2,7 @@
 
 RewriteEngine On
 
-RewriteBase /dwellasiamag.com/
+RewriteBase /klien/mpg/dwellasiamag.com/
 
 
 RewriteRule ^homepage\.dwellasia.magz$ index.php
