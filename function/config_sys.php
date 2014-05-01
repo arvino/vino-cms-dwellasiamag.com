@@ -12,7 +12,7 @@ if($_SERVER['HTTP_HOST']==$Config_Domain || $_SERVER['HTTP_HOST']=="www." . $Con
 	$link_host = "http://" . $_SERVER['HTTP_HOST'] ."/";
 	$server ='localhost';
 }else{
-	$link_host = "http://" . $_SERVER['HTTP_HOST'] ."/dwellasiamag.com/";
+	$link_host = "http://" . $_SERVER['HTTP_HOST'] ."/klien/mpg/dwellasiamag.com/";
 	$server ='localhost';
 }
 
@@ -23,7 +23,7 @@ $dir_admin = "webadmin/";
 $server ='localhost';
 $db_user ='root';
 $db_pass ='1q2w3e4r5t';
-$db_name ='k8184553_dadb';
+$db_name ='db_dwellasiamag';
 
 $dbh=mysql_connect ("$server", "$db_user", "$db_pass") or die ('Cannot connect to database because : ' . mysql_error());
 mysql_select_db ("$db_name"); 
