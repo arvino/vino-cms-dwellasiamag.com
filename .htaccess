@@ -1,0 +1,205 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+
+RewriteBase /dwellasiamag.com/
+
+
+RewriteRule ^homepage\.dwellasia.magz$ index.php
+
+
+ 
+# Start News Modul #
+
+
+RewriteRule ^news\.dwellasia.magz$ page_news_utama.php?modul=news
+
+RewriteRule ^news-channel-([0-9]+)-(.*)\.dwellasia.magz$ page_news_kategori.php?modul=news&idkategori=$1&keterangan=$2
+
+RewriteRule ^news-channel-page([0-9]+)-([0-9]+)-(.*)\.dwellasia.magz$ page_news_kategori.php?modul=news&halaman=$1&idkategori=$2&keterangan=$3
+
+
+
+RewriteRule ^news-subchannel-([0-9]+)-([0-9]+)-(.*)\.dwellasia.magz$ page_news_subkategori.php?modul=news&idkategori=$1&idkategorisub=$2&keterangan=$3
+
+RewriteRule ^news-subchannel-page([0-9]+)-([0-9]+)-([0-9]+)-(.*)\.dwellasia.magz$ page_news_subkategori.php?modul=news&halaman=$1&idkategori=$2&idkategorisub=$3&keterangan=$4
+
+
+
+RewriteRule ^read-news-([0-9]+)-([0-9]+)-([0-9]+)-(.*)\.dwellasia.magz$ page_news_detail.php?modul=news&idkategori=$1&idsubkategori=$2&id=$3&judul=$4
+
+RewriteRule ^read-news-page([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)-(.*)-(.*)\.dwellasia.magz$ page_news_detail.php?modul=news&halaman=$1&idkategori=$2&idsubkategori=$3&id=$4&keterangan=$5&judul=$6
+
+RewriteRule ^read-news-([0-9]+)-([0-9]+)-([0-9]+)-(.*)-(.*)-(.*)\.dwellasia.magz$ page_news_detail.php?modul=news&idkategori=$1&idsubkategori=$2&id=$3&keterangan=$4&judul=$5&pesan_error=$6
+
+RewriteRule ^process-news\.dwellasia.magz$ proses_news.php?modul=news
+
+
+
+
+RewriteRule ^indeks\.dwellasia.magz$ page_news_indeks_utama.php?modul=news
+
+RewriteRule ^indeks-page([0-9]+)\.dwellasia.magz$ page_news_indeks_utama.php?modul=news&halaman=$1
+
+
+
+
+RewriteRule ^indeks-news-(.*)-([0-9]+)-(.*)\.dwellasia.magz$ page_news_indeks_kategori.php?modul=news&submit_kategori=$1&id=$2&keterangan=$3
+
+RewriteRule ^indeks-newspage-(.*)-page([0-9]+)-([0-9]+)-(.*)\.dwellasia.magz$ page_news_indeks_kategori.php?modul=news&submit_kategori=$1&halaman=$2&id=$3&keterangan=$4
+
+
+
+# End News Modul #
+
+
+
+
+# Start Otherpage # 
+
+RewriteRule ^otherpage\.dwellasia.magz$ page_otherpage_utama.php?modul=otherpage
+
+RewriteRule ^otherpage-category-([0-9]+)-(.*)\.dwellasia.magz$ page_otherpage_kategori.php?modul=otherpage&idkategori=$1&keterangan=$2
+
+RewriteRule ^otherpage-subcategory-([0-9]+)-([0-9]+)-(.*)\.dwellasia.magz$ page_otherpage_subkategori.php?modul=otherpage&idkategori=$1&idsubkategori=$2&keterangan=$3
+
+RewriteRule ^otherpage-subcategory-page([0-9]+)-([0-9]+)-([0-9]+)-(.*)\.dwellasia.magz$ page_otherpage_subkategori.php?modul=otherpage&halaman=$1&idkategori=$2&idsubkategori=$3&keterangan=$4
+
+RewriteRule ^view-otherpage-([0-9]+)-([0-9]+)-([0-9]+)-(.*)\.dwellasia.magz$ page_otherpage_detail.php?modul=otherpage&idkategori=$1&idsubkategori=$2&id=$3&judul=$4
+
+RewriteRule ^view-otherpage-page([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)-(.*)-(.*)\.dwellasia.magz$ page_otherpage_detail.php?modul=otherpage&halaman=$1&idkategori=$2&idsubkategori=$3&id=$4&keterangan=$5&judul=$6
+
+RewriteRule ^view-otherpage-([0-9]+)-([0-9]+)-([0-9]+)-(.*)-(.*)-(.*)\.dwellasia.magz$ page_otherpage_detail.php?modul=otherpage&idkategori=$1&idsubkategori=$2&id=$3&keterangan=$4&judul=$5&pesan_error=$6
+
+RewriteRule ^process-otherpage\.dwellasia.magz$ page_otherpage_proses.php?modul=otherpage
+
+# End otherpage #
+
+
+
+
+
+
+# Start Contact Us #
+
+RewriteRule ^contact-us\.dwellasia.magz$ page_contact_us.php
+
+RewriteRule ^contact-us-(.*)-msg\.dwellasia.magz$ page_contact_us.php?pesan_error=$1
+
+RewriteRule ^process-contact\.dwellasia.magz$ proses_contactus.php
+
+# End Contact Us #
+
+
+
+
+# Start Subscribe #
+
+RewriteRule ^subscribe\.dwellasia.magz$ page_subscribe.php
+
+RewriteRule ^subscribe-(.*)-msg\.dwellasia.magz$ page_subscribe.php?pesan_error=$1
+
+RewriteRule ^process-subscribe\.dwellasia.magz$ proses_subscribe.php
+
+# End Subscribe #
+
+
+
+
+
+# Start Search Data #
+
+RewriteRule ^search-data\.dwellasia.magz$ page_search_data.php
+
+RewriteRule ^search-data-(.*)-(.*)-page([0-9]+)-(.*).dwellasia.magz$ page_search_data.php?modul=$1&cari=$2&halaman=$3&katakunci=$4
+
+# End Search Data #
+
+
+
+
+
+# Start Newsletter #
+
+RewriteRule ^newsletter-\.dwellasia.magz$ page_newsletter.php
+
+RewriteRule ^newsletter-(.*)-msg\.dwellasia.magz$ page_newsletter.php?pesan_error=$1
+
+RewriteRule ^proccess-newsletter\.dwellasia.magz$ proses_newsletter.php
+
+# End Newsletter #
+
+
+
+
+
+# Start Public users alias Member Area #
+
+RewriteRule ^publicusers-register\.dwellasia.magz$ page_publicusers_registrasi.php
+
+RewriteRule ^publicusers-register\.dwellasia.magz?pesan_error=(.*) page_publicusers_registrasi.php?pesan_error=$1
+
+RewriteRule ^publicusers-register-success\.dwellasia.magz$ page_publicusers_registrasi_berhasil.php
+
+RewriteRule ^publicusers-register-success\.dwellasia.magz?pesan_error=(.*) page_publicusers_registrasi_berhasil.php?pesan_error=$1
+
+RewriteRule ^publicusers-confirm-(.*)-(.*)\.dwellasia.magz$ proses_publicusers.php?action=$1&kodeaktifasi=$2
+
+RewriteRule ^publicusers-login\.dwellasia.magz$ page_publicusers_login.php
+
+RewriteRule ^publicusers-login\.dwellasia.magz?pesan_error=(.*) page_publicusers_login.php?pesan_error=$1
+
+RewriteRule ^publicusers-main\.dwellasia.magz$ page_publicusers_utama.php
+
+RewriteRule ^publicusers-main\.dwellasia.magz?pesan_error=(.*) page_publicusers_utama.php?pesan_error=$1
+
+RewriteRule ^publicusers-list-main\.dwellasia.magz$ page_publicusers_list_utama.php
+
+RewriteRule ^publicusers-change-password\.dwellasia.magz$ page_publicusers_change_password.php
+
+RewriteRule ^publicusers-myinbox\.dwellasia.magz$ page_publicusers_inbox.php
+
+RewriteRule ^publicusers-profile\.dwellasia.magz$ page_publicusers_profile.php
+
+RewriteRule ^publicusers-logout\.dwellasia.magz$ page_publicusers_logout.php
+
+# End Public users alias Member Area #
+
+
+
+
+# Start Banner #
+
+RewriteRule ^banner-([0-9]+)-detail\.dwellasia.magz$ page_banner_detail.php?modul=banner&id=$1
+
+# End Banner # 
+
+
+# Start Mobile Version #
+
+RewriteRule ^mobile page_mobile.php
+
+# End Mobile Version # 
+
+
+# Start RSS #
+
+RewriteRule ^rss page_rss.php
+
+# End RSS # 
+
+
+
+# Short permalink for indexing page of website #
+
+
+
+RewriteRule ^in-print\.dwellasia.magz$ page_getmagz_indprint.php
+
+
+RewriteRule ^in-digital\.dwellasia.magz$ page_getmagz_indigital.php
+
+
+
+# Web developer by Arvino Zulka Harahap , at November 2011  #
+</IfModule>
